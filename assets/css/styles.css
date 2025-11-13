@@ -1,0 +1,408 @@
+body {
+    margin: 0;                          /* elimina margen externo por defecto del body */
+    padding: 0;                         /* elimina relleno interno por defecto del body */
+    background-color: #0e0e10;          /* color de fondo principal del sitio */
+    color: rgb(252, 252, 252);          /* color de texto por defecto (blanco) */
+    font-family: "Roboto", sans-serif;  /* tipografía base del sitio */
+    font-weight: 300;                   /* grosor de fuente ligero */
+    font-style: normal;                 /* estilo de fuente normal (sin itálica) */
+}
+
+/* 
+   =======================================
+   Estilos para la barra de Menú ===
+   =======================================
+*/
+
+#nav-logo {
+    font-family: "Roboto", sans-serif;  /* tipografía del logotipo */
+    position: absolute;                 /* saca del flujo y posiciona por top/left relativo al contenedor posicionado */
+    top: 30px;                          /* separa 30px desde el borde superior */
+    left: 30px;                         /* separa 30px desde el borde izquierdo */
+    z-index: 1000;                      /* asegura que quede por encima de otros elementos */
+    font-weight: 700;                   /* grosor de fuente negrita */
+    font-size: 2rem;                    /* tamaño de fuente grande (2 × tamaño raíz) */
+}
+
+#nav-logo span {
+    color: rgb(253, 195, 21);           /* color destacado para la palabra “Studio” */
+}
+
+#nav-menu {
+    position: absolute;                 /* posiciona el menú en la esquina superior derecha */
+    top: 30px;                          /* separa 30px desde arriba */
+    right: 16px;                        /* separa 16px desde la derecha */
+    display: flex;                      /* distribuye items en fila flexible */
+    gap: .75rem;                        /* espacio entre enlaces del menú */
+    align-items: center;                /* alinea verticalmente al centro los items del flex */
+    z-index: 1000;                      /* por encima del contenido del hero */
+}
+
+#nav-menu span {
+    margin: 0 15px;                     /* margen horizontal entre spans */
+    text-decoration: none;              /* sin subrayado */
+    text-transform: uppercase;          /* convierte texto a mayúsculas */
+    font-weight: bold;                  /* resalta el texto en negrita */
+}
+
+#nav-menu a {
+    text-decoration: none;              /* enlaces sin subrayado */
+    color: rgba(255, 255, 255, 0.89);   /* color de enlaces (blanco con leve transparencia) */
+}
+
+.nav-btn {
+    position: relative;                 /* permite ajustar con top/left sin salir del flujo */
+    top: -10px;                         /* mueve el botón 10px hacia arriba */
+    display: inline-block;              /* permite dimensiones y márgenes como bloque, en línea */
+    background-color: rgb(234, 179, 8); /* color de fondo del botón (amarillo) */
+    color: #121212;                     /* color del texto del botón (casi negro) */
+    text-decoration: none;              /* sin subrayado en el botón-enlace */
+    font-weight: 700;                   /* texto del botón en negrita */
+    padding: .8rem 1.2rem;              /* relleno vertical y horizontal */
+    border-radius: 999px;               /* bordes totalmente redondeados (forma píldora) */
+    margin-top: 1rem;                   /* separación superior */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .35); /* sombra para relieve */
+    transition: transform .2s ease, box-shadow .3s ease; /* animación suave al hover */
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);        /* levanta el botón 2px al pasar el mouse */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .45); /* sombra más intensa en hover */
+    background-color: rgb(253, 195, 21);/* aclara el amarillo al hover */
+}
+
+
+/* 
+   =======================================
+   Estilos para la sección de Hero === 
+   =======================================
+*/
+
+.hero {
+    position: relative;                 /* establece contexto para hijos posicionados (absolute) */
+    min-height: clamp(70vh, 80vh, 92vh);/* altura mínima flexible: min 70vh, ideal 80vh, máx 92vh */
+    display: grid;                      /* usa grid para organizar el contenido */
+    align-items: center;                /* centra verticalmente los hijos del grid */
+    background-image:                   /* capas de fondo: gradiente encima + imagen abajo */
+        linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .2) 40%, rgba(0, 0, 0, .65)),
+        url("../img/hero.jpg");
+    background-size: cover;             /* hace que la imagen de fondo cubra todo el contenedor */
+    background-position: center;        /* centra la imagen de fondo */
+    color: rgba(255, 255, 255, 0.89);   /* color de texto en el hero */
+    padding-left: 4rem;                 /* espacio interno a la izquierda (4 × 16px = 64px aprox.) */
+}
+
+.hero span {
+    text-transform: uppercase;          /* convierte el texto del span a mayúsculas */
+    letter-spacing: .18em;              /* espaciado entre letras para look de etiqueta */
+    font-size: .8rem;                   /* tamaño de fuente pequeño */
+    margin: 0 0 .5rem 0;                /* margen inferior para separar del título */
+}
+
+.hero h1 {
+    font-family: Georgia, 'Times New Roman', serif; /* tipografía con serif para el título */
+    font-weight: 700;                   /* título en negrita */
+    font-size: 3.5em;                   /* título muy grande (3.5 × fuente del elemento) */
+    line-height: 1.1;                   /* separación entre líneas compacta */
+    margin: 0 0 .75rem 0;               /* margen inferior para separar del párrafo */
+}
+
+.hero p {
+    font-family: "Dancing Script", cursive; /* fuente decorativa (Google Fonts) */
+    font-optical-sizing: auto;          /* ajuste óptico automático en fuentes variables */
+    font-weight: 400;                   /* grosor regular */
+    font-style: normal;                 /* estilo normal (no itálica) */
+    font-size: 1.5em;                   /* párrafo grande dentro del hero */
+}
+
+/* 
+   =======================================
+   Estilo para mi Main === 
+   =======================================
+*/
+
+/* === Línea vertical en <main> (como línea de tiempo) === */
+#container {
+    position: relative;                 /* contexto para pseudo-elemento ::before absoluto */
+    margin-top: 2rem;                   /* separación superior del main */
+    margin-bottom: 2rem;                /* separación inferior del main */
+    margin-left: 7rem;                  /* margen izquierdo amplio */
+    margin-right: 7rem;                 /* margen derecho amplio */
+    padding-left: 3rem;                 /* deja espacio entre la línea y el contenido */
+}
+
+/* La línea gris continua */
+#container::before {
+    content: "";                        /* genera el pseudo-elemento */
+    position: absolute;                 /* posicionamiento independiente dentro del container */
+    top: 0;                             /* comienza en el borde superior del container */
+    left: 1rem;                         /* coloca la línea a 1rem del borde izquierdo */
+    width: 2px;                         /* grosor de la línea vertical */
+    height: 100%;                       /* cubre todo el alto del container */
+    background-color: #555;             /* color gris de la línea */
+    border-radius: 2px;                 /* bordes levemente redondeados */
+}
+
+/* Opcional: círculos o marcadores para cada sección */
+#container section {
+    position: relative;                 /* para posicionar su propio ::before */
+    padding-left: 1rem;                 /* separa el texto de la línea */
+    margin-bottom: 3rem;                /* espacio entre secciones del timeline */
+}
+
+#container section::before {
+    content: "";                        /* crea el marcador (círculo) */
+    position: absolute;                 /* lo posiciona relativo a la sección */
+    left: -2.1rem;                      /* alinea el círculo con la línea principal */
+    top: 0.5rem;                        /* baja el círculo un poco desde el inicio de la sección */
+    width: 12px;                        /* diámetro del círculo */
+    height: 12px;                       /* diámetro del círculo */
+    background-color: #0e0e10;          /* color de relleno (mismo que el fondo) */
+    border: 2px solid #555;             /* borde gris para que se vea el círculo */
+    border-radius: 50%;                 /* lo convierte en círculo */
+}
+
+/* 
+   =======================================
+   Estilos para el footer === 
+   =======================================
+*/
+
+.site-footer {
+    background-color: #1b1b1f;          /* color de fondo del pie */
+    color: var(--muted);                /* color de texto (usa variable si existe) */
+    padding-block: 2rem;                /* relleno vertical (arriba/abajo) lógico */
+    border-top: 1px solid rgba(255, 255, 255, .06); /* línea sutil superior */
+    color: #9ca3af;                     /* color de texto real (gris claro) */
+}
+
+.site-footer a {
+    color: #9ca3af;                     /* color de enlaces en el footer */
+    text-decoration: none;              /* sin subrayado en los enlaces */
+}
+
+.content-footer {
+    margin: 4rem;                       /* respiración interna alrededor del contenido del footer */
+}
+
+.brand-footer {
+    font-weight: 800;                   /* marca bien pesada (negrita fuerte) */
+    letter-spacing: .3px;               /* separa levemente las letras */
+    text-decoration: none;              /* sin subrayado */
+    display: inline-flex;               /* layout flexible en línea para icono + texto */
+    align-items: center;                /* centra verticalmente los ítems */
+    gap: .35rem;                        /* separación entre icono y texto */
+    font-size: 1.2rem;                  /* tamaño del texto de marca en el footer */
+}
+
+.brand-footer span {
+    color: rgb(253, 195, 21);           /* destaca parte del nombre de marca */
+}
+
+.footer_links {
+    background-color: rgb(89 89 89);    /* fondo gris para el contenedor de enlaces */
+    border-radius: 20px;                /* esquinas redondeadas */
+    padding: 4px;                       /* relleno interno */
+}
+
+/* === Boton de Whatsapp === */
+
+.btn-wa {
+    position: fixed;                    /* botón flotante fijo al viewport */
+
+    /* separación base*/
+    right: 16px;                        /* separación inicial desde la derecha (será sobrescrita abajo) */
+    bottom: 16px;                       /* separación inicial desde abajo (será sobrescrita abajo) */
+
+    /* ajuste extra para pantallas con “safe areas” */
+    right: calc(16px + env(safe-area-inset-right, 0px));  /* compensa notch/bordes seguros a la derecha */
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));/* compensa notch/bordes seguros abajo */
+
+    z-index: 1000;                      /* por encima de otros elementos */
+    background: #25D366;                /* color oficial de WhatsApp */
+    color: #fff;                        /* color del icono/texto en blanco */
+    border-radius: 50%;                 /* forma circular */
+    width: 56px;                        /* ancho del botón */
+    height: 56px;                       /* alto del botón */
+    display: grid;                      /* facilita centrar el contenido */
+    place-items: center;                /* centra horizontal y verticalmente el ícono */
+    text-decoration: none;              /* sin subrayado en el enlace */
+    font-size: 28px;                    /* tamaño del ícono dentro del botón */
+}
+
+
+
+/* ------------------------------------- CLASE 6 --------------------------------------------*/
+
+
+/* ---- Lista de servicios con Flex ---- */
+.servicios-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    /* flex */
+    flex-wrap: wrap;
+    /* flex-wrap */
+    gap: 1rem;
+    /* separación entre tarjetas */
+    align-items: stretch;
+    /* align-items */
+    justify-content: flex-start;
+    /* justify-content */
+}
+
+.servicios-list li {
+    flex: 1 1 220px;
+    /* base 220px, crece/encoge */
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 12px;
+    padding: 1rem;
+    background: #151517;
+}
+
+/* nth-child(): alternamos color de fondo para enseñar el selector */
+.servicios-list li:nth-child(odd) {
+    background: #241b25;
+}
+
+.servicios-list li:nth-child(3) {
+    outline: 2px dashed #fdc315;
+}
+
+/* destacamos el 3° */
+
+/* ---- Sección Sobre mí con Flex ---- */
+.sobre {
+    display: flex;
+    /* display:flex */
+    flex-direction: row;
+    /* flex-direction */
+    align-items: center;
+    /* align-items */
+    gap: 1.25rem;
+}
+
+.sobre-foto {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+@media (max-width: 720px) {
+    .sobre {
+        flex-direction: column;
+    }
+
+    /* En móviles apila */
+}
+
+/* ---- Galería con Flex y Wrap ---- */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    /* wrap para que las fotos pasen a otra línea */
+    gap: .75rem;
+    justify-content: center;
+    /* centrado horizontal */
+    align-items: flex-start;
+    /* alineación vertical al inicio */
+    margin-top: .75rem;
+}
+
+.galeria figure {
+    margin: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #151517;
+    border: 1px solid rgba(255, 255, 255, .08);
+    width: 220px;
+    /* ancho fijo pedagógico */
+}
+
+.galeria img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.galeria figcaption {
+    font-size: .9rem;
+    opacity: .8;
+    padding: .5rem .75rem;
+}
+
+/* ---- Testimonios con nth-child para alternar fondo ---- */
+.testimonios blockquote {
+    margin: 0 0 .75rem 0;
+    padding: .75rem 1rem;
+    border-left: 3px solid #fdc315;
+    background: #151517;
+    border-radius: 8px;
+}
+
+.testimonios blockquote:nth-child(even) {
+    background: #17171a;
+}
+
+.testimonios cite {
+    display: block;
+    margin-top: .25rem;
+    font-style: normal;
+    opacity: .8;
+}
+
+/* ---- Tabla simple con rayado + bordes ---- */
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    max-width: 900px;
+}
+
+.tabla-precios th,
+.tabla-precios td {
+    border: 1px solid rgba(255, 255, 255, .12);
+    padding: .6rem .7rem;
+    text-align: left;
+}
+
+.tabla-precios thead th {
+    background: #1b1b1f;
+}
+
+.tabla-precios tbody tr:nth-child(even) {
+    background: #16161a;
+    /* nth-child(even) */
+}
+
+/* ---- Video responsive 16:9 ---- */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 1rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: #111;
+    aspect-ratio: 16/9;
+    /* alternativa moderna al padding-top hack */
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#contacto li {
+    list-style: none;
+    padding-top: 10px;
+}
+
+#contacto li i {
+    padding-right: 10px;
+}

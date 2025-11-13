@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Studio</title>
+
+    <!-- Uso familia de fonts de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- iconos para whatsapp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Aquí estan mis estilos personalizados -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div id="nav-logo">Digital<span> Studio</span></div>
+        <nav id="nav-menu">
+            <a href="#servicios">Servicios</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#contacto" class="nav-btn">Contacto</a>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero" aria-label="Portada">
+            <div class="container">
+                <span>Fotografía profesional</span>
+                <h1>Capturamos la luz<br>Contamos tu historia</h1>
+                <p>
+                    Bodas, retratos editoriales, producto y cobertura de eventos. Sutileza, técnica y mirada artística.
+                </p>
+            </div>
+        </section>
+
+    </header>
+
+    <!-- TRABAJAMOS CON LA CLASE 6 -->
+
+    <main id="container">
+        
+        <section id="servicios">
+            <h1>Servicios</h1>
+            <p>En Digital Studio creamos imágenes con identidad para personas, marcas y eventos.</p>
+
+            <!-- Lista de servicios (usamos nth-child en CSS para resaltar algunos) -->
+            <ul class="servicios-list">
+                <li>
+                    <h3>Bodas</h3>
+                    <p>Cobertura completa: civil, ceremonia y fiesta. Entrega digital + selección impresa.</p>
+                </li>
+                <li>
+                    <h3>Retratos</h3>
+                    <p>Book personal o corporativo en estudio o exteriores; dirección de poses incluida.</p>
+                </li>
+                <li>
+                    <h3>Producto</h3>
+                    <p>Fotografía de catálogo para e-commerce con fondos limpios y luz controlada.</p>
+                </li>
+                <li>
+                    <h3>Eventos</h3>
+                    <p>Conferencias, lanzamientos y shows con cobertura discreta y ágil.</p>
+                </li>
+                <li>
+                    <h3>Arquitectura</h3>
+                    <p>Interiores y exteriores con corrección de perspectiva y post-pro de color.</p>
+                </li>
+            </ul>
+
+            <!-- Tabla simple de paquetes (zebra con nth-child) -->
+            <table class="tabla-precios" aria-label="Paquetes y precios (ficticios)">
+                <thead>
+                    <tr>
+                        <th>Paquete</th>
+                        <th>Incluye</th>
+                        <th>Entrega</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Start</td>
+                        <td>Sesión 1 h · 15 fotos editadas</td>
+                        <td>Drive + 2 impresiones</td>
+                        <td>$50.000</td>
+                    </tr>
+                    <tr>
+                        <td>Pro</td>
+                        <td>Sesión 2 h · 30 fotos editadas</td>
+                        <td>Drive + 5 impresiones</td>
+                        <td>$85.000</td>
+                    </tr>
+                    <tr>
+                        <td>Full</td>
+                        <td>Sesión 3 h · 60 fotos editadas</td>
+                        <td>Drive + 10 impresiones</td>
+                        <td>$130.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="portfolio">
+            <h1>Porfolio</h1>
+            <p>Una muestra breve. La grilla está hecha con <code>display:flex</code>, <code>flex-wrap</code>,
+                <code>justify-content</code> y <code>align-items</code>.</p>
+
+            <!-- Galería con flex (usa imágenes demo, podés cambiarlas por las tuyas) -->
+            <div class="galeria">
+                <figure><img src="assets/img/porfolio_1.jpg" alt="Retrato en exteriores">
+                    <figcaption>Retrato</figcaption>
+                </figure>
+                <figure><img src="assets/img/porfolio_2.jpg" alt="Cámara vintage">
+                    <figcaption>Producto</figcaption>
+                </figure>
+                <figure><img src="assets/img/porfolio_3.jpg" alt="Pareja en bosque">
+                    <figcaption>Modelaje</figcaption>
+                </figure>
+                <figure><img src="assets/img/porfolio_4.jpg" alt="Escena urbana">
+                    <figcaption>Evento 15</figcaption>
+                </figure>
+                <figure><img src="assets/img/porfolio_5.jpg" alt="Concierto en vivo">
+                    <figcaption>Boda</figcaption>
+                </figure>
+                <figure><img src="assets/img/porfolio_6.jpg" alt="Fachada moderna">
+                    <figcaption>Varios</figcaption>
+                </figure>
+            </div>
+
+            <!-- Video (reemplazá la ruta por tu MP4 local) -->
+            <div class="video-wrapper">
+                <video class="video" controls preload="metadata" poster="assets/img/paisajes.jpg" playsinline>
+                    <source src="assets/video/video.mp4" type="video/mp4" />
+                    Tu navegador no soporta el elemento <code>video</code>.
+                </video>
+            </div>
+
+
+            <div class="video-wrapper">
+                <iframe width="853" height="480" src="https://www.youtube.com/embed/xFxMx7DsqP0"
+                    title="Video corto de naturaleza bella 720p HD" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+        </section>
+
+        <section id="sobre-mi">
+            <h1>Sobre mí</h1>
+            <!-- Dos columnas con flex -->
+            <div class="sobre">
+                <img src="assets/img/hero.jpg" alt="Fotógrafa con cámara" class="sobre-foto">
+                <div class="sobre-texto">
+                    <p>Hola, soy <strong>Leandro</strong>, director de Digital Studio. Me especializo en retratos, producto y
+                        cobertura de eventos. Mi enfoque combina técnica, simpleza y una buena charla para que te sientas
+                        cómodo/a frente a cámara.</p>
+                    <p>Trabajo con equipos full-frame y lentes luminosos; edito color y contraste para lograr un estilo nítido y
+                        natural. Agendamos, producimos y entrego tu material en alta calidad listo para web e impresión.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios">
+            <h1>Testimonios</h1>
+            <div class="testimonios">
+                <!-- blockquote: Su función es dar formato semántico (es decir, con significado) a un texto que no fue escrito por el autor de la página, sino que proviene de otra persona, obra o medio.-->
+                <blockquote>“En la boda no sentimos la cámara y las fotos quedaron increíbles.” <cite>— Sofía & Martín</cite>
+                </blockquote>
+                <blockquote>“El catálogo quedó prolijo y parejo. Mejoró la conversión en la tienda.” <cite>— Emilia, Tienda
+                        Nube</cite></blockquote>
+                <blockquote>“Retratos que transmiten. Hoy son mi foto de perfil profesional.” <cite>— Franco, Diseñador
+                        UX</cite></blockquote>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="site-footer">
+            <div class="content-footer">
+                <div id="contacto">
+                    <h2>Contacto</h2>
+                    <ul>
+                        <li><i class="fa fa-lg fa-map-marker"></i>Benavidez, Tigre, Bs. As.</li>
+                        <li><i class="fa fa-lg fa-envelope"></i>info@servicio.com.ar</li>
+                        <li><i class="fa fa-lg fa-phone"></i>Por consultas u presupuestos escribinos por nuestro <strong>Whatsapp: 011 15 1234 1234</strong></li>
+                    </ul>    
+                    
+                    <section align="center">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m20!1m12!1m3!1d7827.872050500007!2d-58.587959287275524!3d-34.421299290873016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m5!3e6!4m1!2sestacion%20de%20tren!4m1!2stigre!5e0!3m2!1ses!2sar!4v1763049987787!5m2!1ses!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </section>  
+
+                </div>
+                <br>
+                <br>
+                <div>
+                    <a href="#container" class="brand-footer">Digital<span>Studio</span></a>
+                    <p class="made-footer">Prof. Leandro © <span>2025</span> - Digital Studio. Todos los derechos reservados.</p>
+                </div>
+                <div>
+                    <a class="footer_links" href="#servicios">Servicios</a>
+                    <a class="footer_links" href="#portfolio">Portfolio</a>
+                    <a class="footer_links" href="#sobre-mi">Sobre mí</a>
+                    <a class="footer_links" href="#contacto">Contacto</a>
+                </div>
+            </div>
+        </div>
+
+        <a class="btn-wa" href="https://wa.me/549111554109999?text=Hola%20quisiera%20un%20presupuesto" target="_blank"
+            rel="noopener" aria-label="Escribir por WhatsApp" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+    </footer>
+
+
+</body>
+
+</html>
